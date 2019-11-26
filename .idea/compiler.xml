@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Annotation profile for ChatRoom" enabled="true">
+        <sourceOutputDir name="src/main/webapp/WEB-INF/generated-sources/annotations" />
+        <sourceTestOutputDir name="src/main/webapp/WEB-INF/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="ChatRoom" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>
