@@ -4,6 +4,7 @@ import cn.dmwqaq.chat_room.pojo.User;
 import cn.dmwqaq.chat_room.service.UserService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,12 +17,15 @@ import java.io.IOException;
 @RequestMapping("/user")
 public class UserController {
 
-    private final UserService userService;
     private static Logger logger = LogManager.getLogger(UserController.class);
 
-    public UserController(UserService userService) {
-        this.userService = userService;
-    }
+    @Autowired
+    private UserService userService;
+    //    private final UserService userService;
+
+    //    public UserController(UserService userService) {
+    //        this.userService = userService;
+    //    }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public void login(HttpServletRequest request, HttpServletResponse response) {

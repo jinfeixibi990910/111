@@ -1,60 +1,58 @@
 body {
     padding-top: 100px;
+    min-width: 1170px;
 }
 
-#main_container .row .col-md-2, #main_container .row .col-md-10 {
-    margin: 0;
+#main .col-md-2, #main .col-md-10 {
+    margin: 0 0 0 0;
     padding: 0 0 0 0;
-    /*height: 800px;*/
 }
 
-#friends_list_form {
-    margin-top: 10px;
-    margin-left: 25px;
-    margin-bottom: 0;
+#users_list_form {
+    margin: 10px 0 0 25px;
 }
 
-#friends_list_search_input {
+#users_list_search_input {
     width: 100px;
     height: 22px;
     padding: 0 0 0 0;
 }
 
-#friends_list_well {
+#users_list_well {
     background-color: #d0d0d0;
-
-
 }
 
-#friends_list_well, #main_well {
+#users_list_well, #main_well {
     margin: 0;
     padding: 0 0 0 0;
     height: 500px;
 }
 
 
-#friends_list_well > a, #friends_list_well > div {
+#users_list_well > a, #users_list_well > div {
     color: black;
     position: relative;
     left: 20px;
     top: 20px;
 }
 
-#friends_list_well > a {
+#users_list_well > a {
     margin-bottom: 10px;
     padding-bottom: 10px;
 }
 
-#friends_list_well {
+#users_list_well {
     position: relative;
+    border-radius: 0px;
+    background-color: #dedede;
 }
 
-#friends_list_well a:focus {
+#users_list_well a:focus {
     color: black;
     text-decoration: black;
 }
 
-#friends_list_well a:hover {
+#users_list_well a:hover {
     color: black;
     text-decoration: black;
 }
@@ -65,9 +63,29 @@ body {
 }
 
 
+#main_well {
+    margin: 0 0 0 0;
+    border-radius: 0px;
+}
+
 #input_area {
-    /*margin-left: 5px;*/
-    padding-left: 15px;
+    position: relative;
+    bottom: 4px;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    border-radius: 10px;
+    width: 973px;
+    height: 137px;
+}
+
+#dialog_well {
+    background-color: white;
+    border-radius: 10px;
+
+    height: 360px;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    overflow-y: auto;
 }
 
 #send_btn {
@@ -76,7 +94,66 @@ body {
     bottom: 50px;
 }
 
-#dialog_well {
-    height: 360px;
-    margin-bottom: 10px;
+
+.message {
+    padding-top: 15px;
 }
+
+.message-container {
+    background-color: white;
+    width: 940px;
+    height: 358px;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+
+.message-content {
+    display: table;
+    max-width: 350px;
+    word-break: break-all;
+}
+
+.message-this {
+    float: right;
+    clear: both;
+    margin-left: 15px;
+}
+
+.message-that {
+    float: left;
+    clear: both;
+    margin-left: 15px;
+
+}
+
+.message-this .message-content {
+    background-color: rgb(227, 247, 238);
+    color: rgb(37, 77, 87);
+    padding: 5px 10px 5px 10px;
+    border-radius: 8px;
+    float: right;
+    clear: both;
+}
+
+.message-that .message-content {
+    background-color: rgb(242, 242, 242);
+    color: black;
+    padding: 5px 10px 5px 10px;
+    border-radius: 8px;
+}
+
+.message-datetime {
+    font-size: 9px;
+    margin-top: 3px;
+}
+
+.message-this .message-datetime {
+    float: right;
+    clear: both;
+}
+
+.message-that .message-datetime {
+    float: left;
+    clear: both;
+}
+

@@ -1,8 +1,10 @@
 package cn.dmwqaq.chat_room.socket;
 
+import cn.dmwqaq.chat_room.service.UserService;
 import com.alibaba.fastjson.JSONObject;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.websocket.*;
 import javax.websocket.server.PathParam;
@@ -11,7 +13,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 @SuppressWarnings("unused")
-@ServerEndpoint("/webSocket/{username}")
+@ServerEndpoint("/webSocket/{userId}")
 public class WebSocketServer {
 
     /**
@@ -26,9 +28,24 @@ public class WebSocketServer {
     private static Map<String, WebSocketServer> clients = new ConcurrentHashMap<>();
 
     /**
+     * Key: 用户ID
+     * Value: 对应的用户名
+     */
+    private static Map<String, String> userInfoMap = new ConcurrentHashMap<>();
+
+    /**
+     * Key: 在线的用户ID
+     * Value: 对应的用户名
+     */
+    private static Map<String, String> onlineUsers = new ConcurrentHashMap<>();
+
+    /**
      * 当前用户的ID
      */
     private String userId;
+
+    @Autowired
+    private UserService userService;
 
     private static Logger logger = LogManager.getLogger(WebSocketServer.class);
 
@@ -39,27 +56,38 @@ public class WebSocketServer {
         this.userId = userId;
         this.session = session;
 
-        clients.put(userId, this);
-        addOnlineCount();
-        logger.trace(userId + "已连接，当前用户数：" + onlineCount);
+        updateOnlineUserInformation(OnlineStatusChangeEvent.ONLINE);
+    }
+
+    private void updateOnlineUserInformation(OnlineStatusChangeEvent event) {
+        try {
+            if (event == OnlineStatusChangeEvent.OFFLINE) {
+                clients.remove(userId);
+                onlineUsers.remove(userId);
+                subOnlineCount();
+                logger.trace(userId + "已断开，当前用户数：" + onlineCount);
+            } else if (event == OnlineStatusChangeEvent.ONLINE) {
+                clients.put(userId, this);
+                onlineUsers.put(userId, getUserNameById(userId));
+                addOnlineCount();
+                logger.trace(userId + "已连接，当前用户数：" + onlineCount);
+            }
+            notifyAllOnlineStatus();
+        } catch (Exception e) {
+            logger.error(e.getMessage(), e);
+        }
     }
 
     @OnClose
     public void onClose() {
-        try {
-            clients.remove(userId);
-            subOnlineCount();
-            logger.trace(userId + "已断开，当前用户数：" + onlineCount);
-        } catch (Exception e) {
-            logger.error(e.getMessage(), e);
-        }
+        updateOnlineUserInformation(OnlineStatusChangeEvent.OFFLINE);
     }
 
     @OnMessage
     public void onMessage(String messageJsonString) {
         JSONObject messageJson = JSONObject.parseObject(messageJsonString);
         if ("all".equals(messageJson.get("target"))) {
-            sendMessage(messageJsonString);
+            sendMessageToAll(messageJsonString);
         } else {
             sendMessage(messageJsonString, messageJson.get("target").toString());
         }
@@ -67,7 +95,7 @@ public class WebSocketServer {
 
     @OnError
     public void onError(Session session, Throwable error) {
-        error.printStackTrace();
+        logger.error(error.getMessage(), error);
     }
 
     public static synchronized int getOnlineCount() {
@@ -78,7 +106,7 @@ public class WebSocketServer {
         return clients;
     }
 
-    private void sendMessage(String message) {
+    private void sendMessageToAll(String message) {
         for (WebSocketServer item : clients.values()) {
             try {
                 item.session.getAsyncRemote().sendText(message);
@@ -102,11 +130,42 @@ public class WebSocketServer {
         }
     }
 
+    private void notifyAllOnlineStatus() {
+        JSONObject o = new JSONObject();
+        o.put("onlineUsers", onlineUsers);
+        o.put("target", "all");
+        o.put("type", "notify");
+        o.put("function", "updateOnlineList");
+
+        sendMessageToAll(o.toJSONString());
+    }
+
+    private String getUserNameById(String key) {
+        String name;
+        if ((name = userInfoMap.get(key)) != null) {
+            return name;
+        } else {
+            try {
+                name = userService.getById(key).getName();
+            } catch (Exception e) {
+                logger.error(e.getMessage(), e);
+                name = "null";
+            }
+            userInfoMap.put(key, name);
+            return name;
+        }
+    }
+
     private static synchronized void addOnlineCount() {
         WebSocketServer.onlineCount++;
     }
 
     private static synchronized void subOnlineCount() {
         WebSocketServer.onlineCount--;
+    }
+
+    private enum OnlineStatusChangeEvent {
+        ONLINE,
+        OFFLINE
     }
 }

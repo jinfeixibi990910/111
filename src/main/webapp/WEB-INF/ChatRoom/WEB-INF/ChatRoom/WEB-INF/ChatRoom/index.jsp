@@ -18,6 +18,7 @@
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="js/jquery-2.1.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/WebSocket.js"></script>
     <script src="js/app.js"></script>
     <link rel="stylesheet" href="css/app.css">
 </head>
@@ -48,7 +49,7 @@
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="#" role="menuitem">1</a></li>
+                        <li><a role="menuitem" onclick="logout()">登出</a></li>
                         <li><a href="#" role="menuitem">1</a></li>
                         <li><a href="#" role="menuitem">1</a></li>
                     </ul>
@@ -69,20 +70,22 @@
 
 <c:if test="${sessionScope.userId != null}" var="logged"/>
 <c:if test="${logged}">
+<script>webSocketInit(${sessionScope.userId})</script>
 <div class="container" id="main">
     <div class="row">
         <div class="col-md-2">
-            <div class="well" id="friends_list_well">
-                <form class="form-inline" id="friends_list_form">
+            <div class="well" id="users_list_well">
+                <form class="form-inline" id="users_list_form">
                     <div class="form-group">
-                        <label for="friends_list_search_input"></label>
-                        <input type="text" class="form-control" id="friends_list_search_input">
+                        <label for="users_list_search_input"></label>
+                        <input type="text" class="form-control" id="users_list_search_input">
                     </div>
                     <div class="form-group">
                         <button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-search"></span></button>
                     </div>
                 </form>
                 <p>在线用户</p>
+                <ul id="user_list"></ul>
             </div>
         </div>
         <div class="col-md-10">
@@ -102,7 +105,8 @@
 <div class="container">
     <div class="jumbotron" id="non-logged-welcome-info">
         <h2 class="text-center">欢迎来到在线多人聊天室，请先登录！</h2>
-        <button type="button" class="btn btn-primary btn-lg center-block" data-toggle="modal" data-target="#login_modal">
+        <button type="button" class="btn btn-primary btn-lg center-block" data-toggle="modal"
+                data-target="#login_modal">
             登录
         </button>
     </div>

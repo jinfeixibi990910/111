@@ -7,25 +7,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9871afa5-ce47-407d-8659-d064ef1815b9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/dmwqaq/chat_room/service/impl/MessageServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/WebSocket.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/dmwqaq/chat_room/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/dmwqaq/chat_room/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/dmwqaq/chat_room/factory/MapperFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/dmwqaq/chat_room/factory/MapperFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/dmwqaq/chat_room/mapper/MessageMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/dmwqaq/chat_room/mapper/MessageMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/dmwqaq/chat_room/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/dmwqaq/chat_room/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/dmwqaq/chat_room/pojo/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/dmwqaq/chat_room/pojo/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/dmwqaq/chat_room/service/MessageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/dmwqaq/chat_room/service/MessageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/dmwqaq/chat_room/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/dmwqaq/chat_room/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/dmwqaq/chat_room/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/dmwqaq/chat_room/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/dmwqaq/chat_room/socket/WebSocketServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/dmwqaq/chat_room/socket/WebSocketServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/ChatRoom/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/ChatRoom/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/ChatRoom/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/ChatRoom/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/ChatRoom/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/ChatRoom/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/js/WebSocket.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/js/WebSocket.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.1html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/WebSocket.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/WebSocket.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/app.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -246,7 +239,7 @@
       <updated>1574758238716</updated>
       <workItem from="1574758240377" duration="3357000" />
       <workItem from="1574761689438" duration="5505000" />
-      <workItem from="1574767766063" duration="4240000" />
+      <workItem from="1574767766063" duration="13427000" />
     </task>
     <servers />
   </component>
