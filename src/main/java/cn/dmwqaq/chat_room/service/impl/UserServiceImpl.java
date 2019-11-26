@@ -23,17 +23,17 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean update(User user) {
+    public boolean update(User user) throws Exception {
         return userMapper.update(user) > 0;
     }
 
     @Override
-    public boolean create(User user) {
+    public boolean create(User user) throws Exception {
         return userMapper.create(user) > 0;
     }
 
     @Override
-    public User getById(String id) {
+    public User getById(String id) throws Exception {
         return userMapper.getById(id);
     }
 }

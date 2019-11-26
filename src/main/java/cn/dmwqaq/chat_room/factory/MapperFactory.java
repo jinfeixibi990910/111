@@ -1,5 +1,6 @@
 package cn.dmwqaq.chat_room.factory;
 
+import cn.dmwqaq.chat_room.mapper.MessageMapper;
 import cn.dmwqaq.chat_room.mapper.UserMapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -24,5 +25,9 @@ public class MapperFactory {
 
     public static UserMapper getUserMapper() {
         return session.getMapper(UserMapper.class);
+    }
+
+    public static MessageMapper getMessageMapper() {
+        return session.getMapper(MessageMapper.class);
     }
 }

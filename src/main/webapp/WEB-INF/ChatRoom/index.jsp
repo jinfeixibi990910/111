@@ -48,7 +48,7 @@
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="#" role="menuitem">1</a></li>
+                        <li><a role="menuitem" onclick="logout()">登出</a></li>
                         <li><a href="#" role="menuitem">1</a></li>
                         <li><a href="#" role="menuitem">1</a></li>
                     </ul>
@@ -102,7 +102,8 @@
 <div class="container">
     <div class="jumbotron" id="non-logged-welcome-info">
         <h2 class="text-center">欢迎来到在线多人聊天室，请先登录！</h2>
-        <button type="button" class="btn btn-primary btn-lg center-block" data-toggle="modal" data-target="#login_modal">
+        <button type="button" class="btn btn-primary btn-lg center-block" data-toggle="modal"
+                data-target="#login_modal">
             登录
         </button>
     </div>

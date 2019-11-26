@@ -4,6 +4,9 @@ function login() {
     const id = idInput.val();
     const password = passwordInput.val();
 
+    if (!loginValidate(id, password)) {
+        return;
+    }
     $.ajax({
         url: 'user/login',
         type: 'POST',
@@ -17,6 +20,31 @@ function login() {
             } else if ('true' === responseText) {
                 location.reload();
             }
+        }
+    });
+}
+
+function loginValidate(id, password) {
+    if (!id) {
+        alert('ID不能为空！');
+        $("#id_input").focus();
+        return false;
+    }
+
+    if (!password) {
+        alert('密码不能为空！');
+        $("#password_input").focus();
+        return false;
+    }
+    return true;
+}
+
+function logout() {
+    $.ajax({
+        url:'user/logout',
+        type:'POST',
+        success: function() {
+            location.reload();
         }
     });
 }

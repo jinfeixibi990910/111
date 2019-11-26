@@ -50,7 +50,13 @@ public class UserController {
 
     @RequestMapping(value = "/logout")
     public void logout(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        request.getSession().removeAttribute("userId");
-        response.sendRedirect("index.jsp");
+        try {
+            request.getSession().removeAttribute("userId");
+            response.setContentType("text/html");
+            response.getWriter().write("true");
+        } catch (Exception e) {
+            logger.error(e.getMessage(), e);
+            response.getWriter().write("false");
+        }
     }
 }

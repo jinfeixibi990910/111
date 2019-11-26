@@ -9,23 +9,19 @@ public class Message implements Serializable {
 
     private String id;
     private String content;
-    private String originUserId;
+    private String sourceUserId;
     private String targetUserId;
     private String createTime;
     private boolean withdrawn;
 
-    public Message(String id, String content, String originUserId, String targetUserId, String createTime,
+    public Message(String id, String content, String sourceUserId, String targetUserId, String createTime,
             boolean withdrawn) {
         this.id = id;
         this.content = content;
-        this.originUserId = originUserId;
+        this.sourceUserId = sourceUserId;
         this.targetUserId = targetUserId;
         this.createTime = createTime;
         this.withdrawn = withdrawn;
-    }
-
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
     }
 
     public String getId() {
@@ -44,12 +40,12 @@ public class Message implements Serializable {
         this.content = content;
     }
 
-    public String getOriginUserId() {
-        return originUserId;
+    public String getSourceUserId() {
+        return sourceUserId;
     }
 
-    public void setOriginUserId(String originUserId) {
-        this.originUserId = originUserId;
+    public void setSourceUserId(String sourceUserId) {
+        this.sourceUserId = sourceUserId;
     }
 
     public String getTargetUserId() {
