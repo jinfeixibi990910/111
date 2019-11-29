@@ -4,7 +4,6 @@ import cn.dmwqaq.chat_room.pojo.User;
 import cn.dmwqaq.chat_room.service.UserService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -19,13 +18,11 @@ public class UserController {
 
     private static Logger logger = LogManager.getLogger(UserController.class);
 
-    @Autowired
-    private UserService userService;
-    //    private final UserService userService;
+    private final UserService userService;
 
-    //    public UserController(UserService userService) {
-    //        this.userService = userService;
-    //    }
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public void login(HttpServletRequest request, HttpServletResponse response) {
@@ -46,6 +43,7 @@ public class UserController {
             } else {
                 response.getWriter().write("true");
                 request.getSession().setAttribute("userId", userId);
+                request.getSession().setAttribute("userName", user.getName());
             }
         } catch (IOException e) {
             logger.error(e.getMessage(), e);
@@ -56,6 +54,7 @@ public class UserController {
     public void logout(HttpServletRequest request, HttpServletResponse response) throws IOException {
         try {
             request.getSession().removeAttribute("userId");
+            request.getSession().removeAttribute("userName");
             response.setContentType("text/html");
             response.getWriter().write("true");
         } catch (Exception e) {

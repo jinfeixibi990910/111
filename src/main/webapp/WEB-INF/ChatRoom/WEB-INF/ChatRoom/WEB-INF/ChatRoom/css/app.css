@@ -1,6 +1,12 @@
-body {
+#non-logged-welcome-info {
+    margin-top: 150px;
+}
+
+#main {
     padding-top: 100px;
     min-width: 1170px;
+    min-height: 500px;
+    /*overflow: auto;*/
 }
 
 #main .col-md-2, #main .col-md-10 {

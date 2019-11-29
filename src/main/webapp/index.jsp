@@ -20,6 +20,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/WebSocket.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/chat.js"></script>
     <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
@@ -48,22 +49,11 @@
                         click me
                         <span class="caret"></span>
                     </a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a role="menuitem" onclick="logout()">登出</a></li>
-                        <li><a href="#" role="menuitem">1</a></li>
+                    <ul class="dropdown-menu" role="menu" id="right-dropdown">
                         <li><a href="#" role="menuitem">1</a></li>
                     </ul>
                 </li>
             </ul>
-
-            <form class="navbar-form navbar-right" role="search">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="搜点啥呢">
-                </div>
-                <button type="submit" class="btn navbar-default"
-                        role="button">Go!
-                </button>
-            </form>
         </div>
     </div>
 </nav>
@@ -145,5 +135,7 @@
         </div>
     </div>
 </div>
-
+<script>
+    afterLogin("${sessionScope.userName}");
+</script>
 </html>

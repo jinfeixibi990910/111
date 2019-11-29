@@ -1,6 +1,5 @@
 let websocket = null;
 const host = document.location.host;
-const port = document.location.port;
 
 let userId = null;
 
@@ -19,12 +18,13 @@ function webSocketInit(userIdArg) {
 
         websocket.onmessage = function (event) {
             const messageStr = event.data;
-            console.log("message:" + messageStr);
             const messageJSON = JSON.parse(messageStr);
             if (messageJSON.type === 'notify') {
-                if (messageJSON.function === 'updateOnlineList') {
+                if (messageJSON['function'] === 'updateOnlineList') {
                     updateOnlineList(messageJSON.onlineUsers);
                 }
+            } else if ('message' === messageJSON.type) {
+                receive(messageJSON);
             }
         };
 
@@ -63,6 +63,7 @@ function receiveMessage() {
 function updateOnlineList(onlineUsers) {
     let id, name;
     const userList = $("#user_list");
+    userList.empty();
     for (let key in onlineUsers) {
         id = key;
         name = onlineUsers[key];

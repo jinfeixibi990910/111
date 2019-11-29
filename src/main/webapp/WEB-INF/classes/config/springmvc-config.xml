@@ -14,6 +14,7 @@
     <mvc:annotation-driven/>
     <context:component-scan base-package="cn.dmwqaq.chat_room.controller"/>
     <context:component-scan base-package="cn.dmwqaq.chat_room.service"/>
+    <context:component-scan base-package="cn.dmwqaq.chat_room.socket"/>
     <!--    <mvc:resources mapping="/css/**" location="/css/"/>-->
     <!--    <mvc:resources mapping="/js/**" location="/js/"/>-->
     <mvc:default-servlet-handler default-servlet-name="default"/>

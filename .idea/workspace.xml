@@ -7,19 +7,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9871afa5-ce47-407d-8659-d064ef1815b9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/dmwqaq/chat_room/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/dmwqaq/chat_room/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/dmwqaq/chat_room/socket/WebSocketServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/dmwqaq/chat_room/socket/WebSocketServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config/springmvc-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/springmvc-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/ChatRoom/WEB-INF/classes/springmvc-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/ChatRoom/WEB-INF/classes/springmvc-config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/ChatRoom/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/ChatRoom/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/ChatRoom/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/ChatRoom/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/ChatRoom/js/WebSocket.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/ChatRoom/js/WebSocket.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/classes/config/springmvc-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/classes/config/springmvc-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/classes/springmvc-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/classes/springmvc-config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/js/WebSocket.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/js/WebSocket.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/js/chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/js/chat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/config/springmvc-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/config/springmvc-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/springmvc-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/springmvc-config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/js/WebSocket.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/WebSocket.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/chat.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,6 +77,13 @@
         <item name="jdbc:mysql://49.235.130.81:3306/online_chatroom?serverTimezone=Asia/Shanghai" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="online_chatroom: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="message_info: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="jdbc:mysql://49.235.130.81:3306/online_chatroom?serverTimezone=Asia/Shanghai" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="online_chatroom: schema" type="76f4a085:MysqlImplModel$Schema" />
         <item name="user_info: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
@@ -102,7 +121,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/css" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -115,16 +134,17 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.20406279" />
-    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\IdeaProjects\ChatRoom\src\main\resources" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IdeaProjects\ChatRoom\src\main\webapp\css" />
       <recent name="D:\IdeaProjects\ChatRoom\src\main\webapp" />
       <recent name="D:\IdeaProjects\ChatRoom\src\main\config" />
       <recent name="D:\IdeaProjects\ChatRoom\src\main\java\cn\dmwqaq\chat_room" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\IdeaProjects\ChatRoom\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -239,7 +259,12 @@
       <updated>1574758238716</updated>
       <workItem from="1574758240377" duration="3357000" />
       <workItem from="1574761689438" duration="5505000" />
-      <workItem from="1574767766063" duration="13427000" />
+      <workItem from="1574767766063" duration="14482000" />
+      <workItem from="1574829815097" duration="7336000" />
+      <workItem from="1574944561360" duration="37000" />
+      <workItem from="1574954369038" duration="1366000" />
+      <workItem from="1575007358713" duration="809000" />
+      <workItem from="1575010140176" duration="6782000" />
     </task>
     <servers />
   </component>

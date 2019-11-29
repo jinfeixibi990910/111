@@ -5,7 +5,9 @@ import com.alibaba.fastjson.JSONObject;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
 import javax.websocket.*;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
@@ -13,6 +15,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 @SuppressWarnings("unused")
+@Component
 @ServerEndpoint("/webSocket/{userId}")
 public class WebSocketServer {
 
@@ -44,12 +47,27 @@ public class WebSocketServer {
      */
     private String userId;
 
-    @Autowired
-    private UserService userService;
-
     private static Logger logger = LogManager.getLogger(WebSocketServer.class);
 
     private Session session;
+
+    @Autowired
+    private UserService userService;
+
+    //    private static UserService staticUserService;
+
+    //    private final UserService userService;
+
+    //    public WebSocketServer(UserService userService) {
+    //        this.userService = userService;
+    //    }
+    private static WebSocketServer staticThis;
+
+    @PostConstruct
+    public void init() {
+        //        staticUserService = this.userService;
+        staticThis = this;
+    }
 
     @OnOpen
     public void onOpen(@PathParam("userId") String userId, Session session) {
@@ -57,6 +75,11 @@ public class WebSocketServer {
         this.session = session;
 
         updateOnlineUserInformation(OnlineStatusChangeEvent.ONLINE);
+    }
+
+    @OnClose
+    public void onClose() {
+        updateOnlineUserInformation(OnlineStatusChangeEvent.OFFLINE);
     }
 
     private void updateOnlineUserInformation(OnlineStatusChangeEvent event) {
@@ -76,11 +99,6 @@ public class WebSocketServer {
         } catch (Exception e) {
             logger.error(e.getMessage(), e);
         }
-    }
-
-    @OnClose
-    public void onClose() {
-        updateOnlineUserInformation(OnlineStatusChangeEvent.OFFLINE);
     }
 
     @OnMessage
@@ -146,7 +164,7 @@ public class WebSocketServer {
             return name;
         } else {
             try {
-                name = userService.getById(key).getName();
+                name = staticThis.userService.getById(key).getName();
             } catch (Exception e) {
                 logger.error(e.getMessage(), e);
                 name = "null";

@@ -53,3 +53,15 @@ function logout() {
     });
 }
 
+function afterLogin(userName) {
+    if (userName === null || userName === undefined || /^[ ]*$/.test(userName)) {
+        return;
+    }
+    let logoutLi = "<li><a role=\"menuitem\" onclick=\"logout()\">登出</a></li>";
+    $("#right-dropdown").prepend(logoutLi);
+
+    $("<li></li>").addClass("navbar-text")
+        .attr('id', 'welcome')
+        .text("欢迎您，" + userName)
+        .prependTo($("ul.navbar-right"));
+}

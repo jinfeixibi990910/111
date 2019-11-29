@@ -6,11 +6,9 @@ function send() {
         alert('请输入内容');
     }
     const datetime = dateFormat(new Date());
-    console.log(datetime);
 
     const contentDOM = $("<div></div>").addClass("message-content").text(text);
-    console.log(contentDOM.html());
-    contentDOM.html(contentDOM.html().replace(/\n/g,'<br/>'));
+    contentDOM.html(contentDOM.html().replace(/\n/g, '<br/>'));
     const datetimeDOM = $("<div></div>").addClass("message-datetime").text(datetime);
     const messageDOM = $("<div></div>").addClass("message").addClass("message-this");
 
@@ -19,7 +17,7 @@ function send() {
     messageContainer.append(messageDOM);
     updateScroll();
     textInput.val('');
-    setTimeout(receive, 1000);
+    sendMessage(text, 'all');
 }
 
 function dateFormat(date) {
@@ -37,7 +35,28 @@ function updateScroll() {
     message.scrollTop = message.scrollHeight;
 }
 
-function receive() {
+function receive(messageJSON) {
+    if (messageJSON.source === userId) {
+        return;
+    }
+
+    const messageContainer = $(".message-container");
+    const text = messageJSON.content;
+    const datetime = dateFormat(new Date());
+
+    const contentDOM = $("<div></div>").addClass("message-content").text(text);
+    contentDOM.html(contentDOM.html().replace(/\n/g, '<br/>'));
+    const datetimeDOM = $("<div></div>").addClass("message-datetime").text(datetime);
+    const messageDOM = $("<div></div>").addClass("message").addClass("message-that");
+
+    messageDOM.append(contentDOM);
+    messageDOM.append(datetimeDOM);
+    messageContainer.append(messageDOM);
+    updateScroll();
+}
+
+/*
+function testReceive() {
     const messageContainer = $(".message-container");
     const datetime = dateFormat(new Date());
     const text = "    const messageContainer = $(\".message-container\");\n    const messageContainer = $(\".message-c" +
@@ -49,4 +68,4 @@ function receive() {
         "<div class=\"message-datetime\">" + datetime + "</div></div>";
     messageContainer.append(newMessage);
     updateScroll();
-}
+}*/
