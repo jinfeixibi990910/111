@@ -21,7 +21,7 @@ function webSocketInit(userIdArg) {
             const messageJSON = JSON.parse(messageStr);
             if (messageJSON.type === 'notify') {
                 if (messageJSON['function'] === 'updateOnlineList') {
-                    updateOnlineList(messageJSON.onlineUsers);
+                    updateOnlineList(messageJSON['onlineUsers']);
                 }
             } else if ('message' === messageJSON.type) {
                 receive(messageJSON);
@@ -29,7 +29,7 @@ function webSocketInit(userIdArg) {
         };
 
         websocket.onclose = function () {
-            // alert("WebSocket连接关闭");
+            alert("WebSocket连接关闭");
         };
 
 
